@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="cityAction" class="com.tabchanj.job.web.action.CityAction" scope="prototype">
+		<property name="service" ref="cityService" />
+	</bean>
+	<bean id="tradeAction" class="com.tabchanj.job.web.action.TradeAction" scope="prototype">
+		<property name="service" ref="tradeService" />
+	</bean>
+	<bean id="salaryLevelAction" class="com.tabchanj.job.web.action.SalaryLevelAction" scope="prototype">
+		<property name="service" ref="salaryLevelService" />
+	</bean>
+	<bean id="companyTypeAction" class="com.tabchanj.job.web.action.CompanyTypeAction" scope="prototype">
+		<property name="service" ref="companyTypeService" />
+	</bean>
+	<bean id="companyAction" class="com.tabchanj.job.web.action.CompanyAction" scope="prototype">
+		<property name="service" ref="companyService" />
+		<property name="companyTypeService" ref="companyTypeService" />
+	</bean>
+	
+	<bean id="jobApplyAction" class="com.tabchanj.job.web.action.JobApplyAction" scope="prototype">
+		<property name="service" ref="jobApplyService" />
+		<property name="companyService" ref="companyService" />
+		<property name="tradeService" ref="tradeService" />
+		<property name="cityService" ref="cityService" />
+		<property name="salaryLevelService" ref="salaryLevelService" />
+	</bean>
+
+</beans>
