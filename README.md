@@ -1,3 +1,0 @@
-# jobapply
-jobapply
-job apply
